@@ -11,65 +11,63 @@ List<Customer> customerObj = new List<Customer>();
 
 List<Order> orderObj = new List<Order>();
 
-
-
 Dictionary<string, Menu> menuObj = new Dictionary<string, Menu>();
 
-void RestaurantInit()
-{
-    using (StreamReader sr = new StreamReader("restaurants.csv"))
-    {
-        int counter = 0;
-        string title = sr.ReadLine();
+//void RestaurantInit()
+//{
+//    using (StreamReader sr = new StreamReader("restaurants.csv"))
+//    {
+//        int counter = 0;
+//        string title = sr.ReadLine();
 
-        while (true)
-        {
-            string line = sr.ReadLine();
+//        while (true)
+//        {
+//            string line = sr.ReadLine();
 
-            if (line == null)
-            {
-                break;
-            }
-
-
-            string[] restaurantInfo = line.Split(',');
+//            if (line == null)
+//            {
+//                break;
+//            }
 
 
-            restaurantsObj[restaurantInfo[0]] = new Restaurant(restaurantInfo[0], restaurantInfo[1], restaurantInfo[2]);
-            restaurantsObj[restaurantInfo[0]].Menu.Add(new Menu(counter.ToString(), "Main Menu"));
-            counter += 1;
-        }
-
-        Console.WriteLine($"{counter} restaurants loaded!");
-    }
-}
+//            string[] restaurantInfo = line.Split(',');
 
 
-void FoodItemInit()
-{
-    using (StreamReader sr = new StreamReader("fooditems.csv"))
-    {
+//            restaurantsObj[restaurantInfo[0]] = new Restaurant(restaurantInfo[0], restaurantInfo[1], restaurantInfo[2]);
+//            restaurantsObj[restaurantInfo[0]].Menu.Add(new Menu(counter.ToString(), "Main Menu"));
+//            counter += 1;
+//        }
 
-        int counter = 0;
-        string title = sr.ReadLine();
-        while (true)
-        {
-            string line = sr.ReadLine();
-            if (line == null)
-            {
-                break;
-            }
-
-            string[] foodItemInfo = line.Split(',');
+//        Console.WriteLine($"{counter} restaurants loaded!");
+//    }
+//}
 
 
+//void FoodItemInit()
+//{
+//    using (StreamReader sr = new StreamReader("fooditems.csv"))
+//    {
 
-            counter += 1;
-        }
+//        int counter = 0;
+//        string title = sr.ReadLine();
+//        while (true)
+//        {
+//            string line = sr.ReadLine();
+//            if (line == null)
+//            {
+//                break;
+//            }
 
-        Console.WriteLine($"{counter} Food Items loaded!");
-    }
-}
+//            string[] foodItemInfo = line.Split(',');
+
+
+
+//            counter += 1;
+//        }
+
+//        Console.WriteLine($"{counter} Food Items loaded!");
+//    }
+//}
 
 
 
@@ -167,3 +165,6 @@ void ListAllRestaurantsAndMenuItems()
         res.DisplayMenu();
     }
 }
+
+CustomerInit()
+OrderInit()
