@@ -36,13 +36,13 @@ namespace S10273989D_PRG2Assignment
         {
             FoodItems.Remove(item);
         }
-
+        
         public void DisplayFoodItems()
         {
             Console.WriteLine($"Menu: {MenuName} (ID: {MenuID})");
             foreach (var item in FoodItems)
             {
-                Console.WriteLine($"- {item.FoodName} (ID: {item.FoodID}, Price: {item.Price:C})");
+                Console.WriteLine($"- {item.itemName}: {item.itemDesc} - ${item.itemPrice}");
             }
         }
 
